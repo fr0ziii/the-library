@@ -88,6 +88,10 @@ library:
       description: Upgrade existing frontend projects — audit what's already there and fix the biggest design problems first without rebuilding from scratch
       source: https://github.com/Leonxlnx/taste-skill/blob/main/redesign-skill/SKILL.md
 
+    - name: shadcn
+      description: Manage shadcn/ui components and projects — adding, searching, fixing, styling, and composing UI with component docs and usage examples; triggers for shadcn/ui, component registries, components.json, and --preset workflows
+      source: https://github.com/shadcn-ui/ui/blob/main/skills/shadcn/SKILL.md
+
     - name: skill-creator
       description: Create new skills, modify and improve existing skills, and measure skill performance — draft skills, run evals, benchmark with variance analysis, and optimize skill descriptions for better triggering accuracy
       source: https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md
