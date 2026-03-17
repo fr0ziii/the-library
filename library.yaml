@@ -13,4 +13,11 @@ default_dirs:
 library:
   skills: []
   agents: []
-  prompts: []
+  prompts:
+    - name: add-changelog
+      description: Generate and maintain project changelog with Keep a Changelog format
+      source: https://github.com/fr0ziii/fff-engineering-playbook/blob/main/prompts/add-changelog.md
+
+    - name: spec-init
+      description: Write detailed specs by interviewing the user to gather requirements
+      source: https://github.com/fr0ziii/fff-engineering-playbook/blob/main/prompts/spec-init.md
