@@ -6,19 +6,19 @@ argument-hint: [command or prompt] [name or details]
 
 # The Library
 
-A meta-skill for private-first distribution of agentics (skills, agents, and prompts) across agents, devices, and teams.
+A meta-skill for private-first distribution of agentics (skills, agents, prompts, and rules) across agents, devices, and teams.
 
 ## Variables
 
 > Update these after forking and cloning the library repo.
 
-- **LIBRARY_REPO_URL**: `<your forked repo url>`
-- **LIBRARY_YAML_PATH**: `~/.claude/skills/library/library.yaml`
-- **LIBRARY_SKILL_DIR**: `~/.claude/skills/library/`
+- **LIBRARY_REPO_URL**: `https://github.com/fr0ziii/the-library.git`
+- **LIBRARY_YAML_PATH**: `~/.claude/skills/the-library/library.yaml`
+- **LIBRARY_SKILL_DIR**: `~/.claude/skills/the-library/`
 
 ## How It Works
 
-The Library is a catalog of references to your agentics. The `library.yaml` file points to where skills, agents, and prompts live (local filesystem or GitHub repos). Nothing is fetched until you ask for it.
+The Library is a catalog of references to your agentics. The `library.yaml` file points to where skills, agents, prompts, and rules live (local filesystem or GitHub repos). Nothing is fetched until you ask for it.
 
 **The `library.yaml` is a catalog, not a manifest.** Entries define what's *available* — not what gets installed. You pull specific items on demand with `/library use <name>`.
 
@@ -103,6 +103,7 @@ The `requires` field uses typed references to avoid ambiguity:
 - `skill:name` — references a skill in the library catalog
 - `agent:name` — references an agent in the library catalog
 - `prompt:name` — references a prompt in the library catalog
+- `rule:name` — references a rule in the library catalog
 
 When resolving dependencies: look up each reference in `library.yaml`, fetch all dependencies first (recursively), then fetch the requested item.
 
@@ -121,6 +122,9 @@ default_dirs:
     prompts:
         - default: .claude/commands/
         - global: ~/.claude/commands/
+    rules:
+        - default: .claude/rules/
+        - global: ~/.claude/rules/
 ```
 
 - If the user says "global" or "globally", use the `global` directory.
@@ -149,6 +153,9 @@ default_dirs:
   prompts:
     - default: .claude/prompts/
     - global: ~/.claude/prompts/
+  rules:
+    - default: .claude/rules/
+    - global: ~/.claude/rules/
 
 library:
   skills:
@@ -187,4 +194,9 @@ library:
     - name: commit-message
       description: Standardized commit message format for all projects
       source: https://github.com/myorg/team-prompts/blob/main/prompts/commit-message.md
+
+  rules:
+    - name: workers
+      description: Cloudflare Workers coding rules and best practices
+      source: https://github.com/cloudflare/skills/blob/main/rules/workers.mdc
 ```

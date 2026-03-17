@@ -32,7 +32,7 @@ The user provides a skill name or description.
   tmp_dir=$(mktemp -d)
   git clone --depth 1 --branch <branch> <clone_url> "$tmp_dir"
   ```
-- Compare the skill directory in the clone with the local copy
+- Compare the skill/rule directory (or file) in the clone with the local copy
 - If they differ AND the remote has changes not in the local copy, warn about conflict
 - Ask the user to resolve before continuing
 

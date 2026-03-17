@@ -8,6 +8,9 @@ default_dirs:
   prompts:
     - default: .claude/commands/
     - global: ~/.claude/commands/
+  rules:
+    - default: .claude/rules/
+    - global: ~/.claude/rules/
 
 # playbook: https://github.com/fr0ziii/fff-engineering-playbook
 library:
@@ -35,7 +38,7 @@ library:
     - name: dogfood
       description: Systematically explore and QA a web application to find bugs and UX issues, producing a structured report with screenshots and repro steps
       source: https://github.com/vercel-labs/agent-browser/blob/main/skills/dogfood/SKILL.md
-      requires: [skill:agent-browser]
+      requires: ["skill:agent-browser"]
 
     - name: durable-objects
       description: Create and review Cloudflare Durable Objects — stateful coordination, RPC methods, SQLite storage, alarms, WebSockets, and Workers integration
@@ -65,3 +68,4 @@ library:
     - name: spec-init
       description: Write detailed specs by interviewing the user to gather requirements
       source: https://github.com/fr0ziii/fff-engineering-playbook/blob/main/prompts/spec-init.md
+  rules: []

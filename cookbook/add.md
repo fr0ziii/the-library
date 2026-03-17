@@ -1,10 +1,10 @@
 # Add a New Entry to the Library
 
 ## Context
-Register a new skill, agent, or prompt in the library catalog.
+Register a new skill, agent, prompt, or rule in the library catalog.
 
 ## Input
-The user provides: name, description, source, and optionally type and dependencies.
+The user provides: name, description, source, and optionally type and dependencies. Rules are typically `.mdc` files.
 
 ## Steps
 
@@ -20,6 +20,7 @@ Figure out the type from the user's prompt or the source path:
 - If the source path contains `SKILL.md` or user says "skill" → type is `skill`
 - If the source path contains `AGENT.md` or user says "agent" → type is `agent`
 - If user says "prompt" → type is `prompt`
+- If source path ends in `.mdc` or user says "rule" → type is `rule`
 - If ambiguous, ask the user
 
 ### 3. Validate the Source
@@ -29,7 +30,7 @@ Figure out the type from the user's prompt or the source path:
 
 ### 4. Parse Dependencies
 Detect dependencies by looking through the skill/agent/prompt files, format them as typed references:
-- `skill:name`, `agent:name`, `prompt:name`
+- `skill:name`, `agent:name`, `prompt:name`, `rule:name`
 - Verify each dependency already exists in `library.yaml` if or warn the user
   - If they don't exist add them to `library.yaml` first. If those files have dependencies, add them recursively.
   - You can detect these sometimes by looking at the frontmatter, and then in the file content look for `/<prompt|agent|skill>:name` references. If you're not sure, ask the user the user if they have any dependencies.
@@ -38,7 +39,7 @@ Detect dependencies by looking through the skill/agent/prompt files, format them
 Read `library.yaml`, add the new entry under the correct section:
 
 ```yaml
-# Under library.skills, library.agents, or library.prompts
+# Under library.skills, library.agents, library.prompts, or library.rules
 - name: <name>
   description: <description>
   source: <source>
@@ -53,6 +54,7 @@ Read `library.yaml`, add the new entry under the correct section:
 - For skills reference the `.../<skill-name>/SKILL.md` file,
 - For agents reference the `.../<agent name>.md` file,
 - For prompts reference the `.../<prompt name>.md` file (installed to `.claude/commands/`),
+- For rules reference the `.../<rule name>.mdc` file (installed to `.claude/rules/`),
 - Remember we'll be adding a absolute path or a github url (https or ssh)
 
 ### 6. Commit and Push

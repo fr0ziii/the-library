@@ -1,7 +1,7 @@
 # Use a Skill from the Library
 
 ## Context
-Pull a skill, agent, or prompt from the catalog into the local environment. If already installed locally, overwrite with the latest from the source (refresh).
+Pull a skill, agent, prompt, or rule from the catalog into the local environment. If already installed locally, overwrite with the latest from the source (refresh).
 
 ## Input
 The user provides a skill name or description.
@@ -17,14 +17,14 @@ git pull
 
 ### 2. Find the Entry
 - Read `library.yaml`
-- Search across `library.skills`, `library.agents`, and `library.prompts`
+- Search across `library.skills`, `library.agents`, `library.prompts`, and `library.rules`
 - Match by name (exact) or description (fuzzy/keyword match)
 - If multiple matches, show them and ask the user to pick one
 - If no match, tell the user and suggest `/library search`
 
 ### 3. Resolve Dependencies
 If the entry has a `requires` field:
-- For each typed reference (`skill:name`, `agent:name`, `prompt:name`):
+- For each typed reference (`skill:name`, `agent:name`, `prompt:name`, `rule:name`):
   - Look it up in `library.yaml`
   - If found, recursively run the `use` workflow for that dependency first
   - If not found, warn the user: "Dependency <ref> not found in library catalog"
@@ -35,7 +35,7 @@ If the entry has a `requires` field:
 - If user said "global" or "globally" → use the `global` path
 - If user specified a custom path → use that path
 - Otherwise → use the `default` path
-- Select the correct section based on type (skills/agents/prompts)
+- Select the correct section based on type (skills/agents/prompts/rules)
 
 ### 5. Fetch from Source
 
@@ -54,6 +54,10 @@ If the entry has a `requires` field:
   ```bash
   cp <prompt_file> <target_directory>/<prompt_name>.md
   ```
+- For rules: copy just the rule file to the target:
+  ```bash
+  cp <rule_file> <target_directory>/<rule_name>.mdc
+  ```
 - If the agent or prompt is nested in a subdirectory under the `agents/` or `commands/` directories, copy the subdirectory to the target as well, creating the subdir if it doesn't exist. This is useful because it keeps the agents or commands grouped together.
 
 **If source is a GitHub URL**:
@@ -67,9 +71,13 @@ If the entry has a `requires` field:
   tmp_dir=$(mktemp -d)
   git clone --depth 1 --branch <branch> https://github.com/<org>/<repo>.git "$tmp_dir"
   ```
-- Copy the parent directory of the file to the target:
+- For skills: copy the parent directory of the file to the target:
   ```bash
   cp -R "$tmp_dir/<parent_path>/" <target_directory>/<name>/
+  ```
+- For agents, prompts, and rules: copy just the single file to the target:
+  ```bash
+  cp "$tmp_dir/<file_path>" <target_directory>/<name>.<ext>
   ```
 - Clean up:
   ```bash
@@ -83,7 +91,7 @@ If the entry has a `requires` field:
 
 ### 6. Verify Installation
 - Confirm the target directory exists
-- Confirm the main file (SKILL.md, AGENT.md, or prompt file) exists in it
+- Confirm the main file (SKILL.md, AGENT.md, prompt file, or `.mdc` rule file) exists in it
 - Report success with the installed path
 
 ### 7. Confirm
