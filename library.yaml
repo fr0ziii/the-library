@@ -44,6 +44,10 @@ library:
       description: Create and review Cloudflare Durable Objects — stateful coordination, RPC methods, SQLite storage, alarms, WebSockets, and Workers integration
       source: https://github.com/cloudflare/skills/blob/main/skills/durable-objects/SKILL.md
 
+    - name: frontend-design
+      description: Create distinctive, production-grade frontend interfaces with high design quality — web components, pages, applications, and UI with bold aesthetic direction that avoids generic AI aesthetics
+      source: https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md
+
     - name: sandbox-sdk
       description: Build sandboxed applications for secure code execution — AI code interpreters, CI/CD systems, interactive dev environments, and untrusted code execution
       source: https://github.com/cloudflare/skills/blob/main/skills/sandbox-sdk/SKILL.md
