@@ -52,6 +52,10 @@ library:
       description: Build sandboxed applications for secure code execution — AI code interpreters, CI/CD systems, interactive dev environments, and untrusted code execution
       source: https://github.com/cloudflare/skills/blob/main/skills/sandbox-sdk/SKILL.md
 
+    - name: skill-creator
+      description: Create new skills, modify and improve existing skills, and measure skill performance — draft skills, run evals, benchmark with variance analysis, and optimize skill descriptions for better triggering accuracy
+      source: https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md
+
     - name: web-perf
       description: Analyze web performance using Chrome DevTools MCP — Core Web Vitals, render-blocking resources, layout shifts, caching, and accessibility audits
       source: https://github.com/cloudflare/skills/blob/main/skills/web-perf/SKILL.md
