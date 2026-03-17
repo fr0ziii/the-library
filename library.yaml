@@ -56,6 +56,10 @@ library:
       description: Prevent AI from generating lazy, incomplete frontend code — blocks placeholder comments, skipped code blocks, and half-finished outputs; forces complete, production-ready implementation
       source: https://github.com/Leonxlnx/taste-skill/blob/main/output-skill/SKILL.md
 
+    - name: remotion-best-practices
+      description: Best practices for Remotion — video creation in React, including captions/subtitles, FFmpeg integration, audio visualization, and composition patterns
+      source: https://github.com/remotion-dev/skills/blob/main/skills/remotion/SKILL.md
+
     - name: sandbox-sdk
       description: Build sandboxed applications for secure code execution — AI code interpreters, CI/CD systems, interactive dev environments, and untrusted code execution
       source: https://github.com/cloudflare/skills/blob/main/skills/sandbox-sdk/SKILL.md
