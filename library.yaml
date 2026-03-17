@@ -76,6 +76,10 @@ library:
       description: Best practices for Remotion — video creation in React, including captions/subtitles, FFmpeg integration, audio visualization, and composition patterns
       source: https://github.com/remotion-dev/skills/blob/main/skills/remotion/SKILL.md
 
+    - name: replicate
+      description: Discover, compare, and run AI models using Replicate's API
+      source: https://github.com/replicate/skills/blob/main/skills/replicate/SKILL.md
+
     - name: sandbox-sdk
       description: Build sandboxed applications for secure code execution — AI code interpreters, CI/CD systems, interactive dev environments, and untrusted code execution
       source: https://github.com/cloudflare/skills/blob/main/skills/sandbox-sdk/SKILL.md
