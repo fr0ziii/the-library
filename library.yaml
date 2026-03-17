@@ -80,6 +80,10 @@ library:
       description: Generate modern, premium frontend code from scratch — covers layout, typography, colors, spacing, and motion with configurable design variance, motion intensity, and visual density settings to avoid generic AI output
       source: https://github.com/Leonxlnx/taste-skill/blob/main/taste-skill/SKILL.md
 
+    - name: vercel-react-best-practices
+      description: React and Next.js performance optimization guidelines from Vercel Engineering — 62 rules across 8 categories covering components, data fetching, bundle optimization, and performance patterns for writing, reviewing, or refactoring React/Next.js code
+      source: https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md
+
     - name: web-perf
       description: Analyze web performance using Chrome DevTools MCP — Core Web Vitals, render-blocking resources, layout shifts, caching, and accessibility audits
       source: https://github.com/cloudflare/skills/blob/main/skills/web-perf/SKILL.md
