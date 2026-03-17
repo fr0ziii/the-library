@@ -9,6 +9,7 @@ default_dirs:
     - default: .claude/commands/
     - global: ~/.claude/commands/
 
+# playbook: https://github.com/fr0ziii/fff-engineering-playbook
 library:
   skills: []
   agents: []
