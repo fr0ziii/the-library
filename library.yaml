@@ -131,7 +131,10 @@ library:
     - name: wrangler
       description: Cloudflare Workers CLI for deploying and managing Workers, KV, R2, D1, Vectorize, AI, Containers, Queues, Workflows, and Secrets Store
       source: https://github.com/cloudflare/skills/blob/main/skills/wrangler/SKILL.md
-  agents: []
+  agents:
+    - name: kumo
+      description: Frontend engineer agent for Cloudflare's React component library (@cloudflare/kumo) — pnpm monorepo with component library, Astro docs site, and Figma plugin
+      source: https://github.com/cloudflare/kumo/blob/main/.opencode/agents/kumo.md
   prompts:
     - name: add-changelog
       description: Generate and maintain project changelog with Keep a Changelog format
