@@ -12,14 +12,50 @@ default_dirs:
 # playbook: https://github.com/fr0ziii/fff-engineering-playbook
 library:
   skills:
+    - name: agents-sdk
+      description: Build AI agents on Cloudflare Workers using the Agents SDK — stateful agents, durable workflows, real-time WebSocket apps, scheduled tasks, MCP servers, and chat applications
+      source: https://github.com/cloudflare/skills/blob/main/skills/agents-sdk/SKILL.md
+
     - name: agent-browser
       description: Browser automation CLI for AI agents — navigate pages, fill forms, click buttons, take screenshots, scrape data, and automate any browser task
       source: https://github.com/vercel-labs/agent-browser/blob/main/skills/agent-browser/SKILL.md
+
+    - name: building-ai-agent-on-cloudflare
+      description: Build AI agents on Cloudflare using the Agents SDK with state management, real-time WebSockets, scheduled tasks, tool integration, and chat capabilities
+      source: https://github.com/cloudflare/skills/blob/main/skills/building-ai-agent-on-cloudflare/SKILL.md
+
+    - name: building-mcp-server-on-cloudflare
+      description: Build remote MCP servers on Cloudflare Workers with tools, OAuth authentication, and production deployment
+      source: https://github.com/cloudflare/skills/blob/main/skills/building-mcp-server-on-cloudflare/SKILL.md
+
+    - name: cloudflare
+      description: Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI, networking, security, and infrastructure-as-code
+      source: https://github.com/cloudflare/skills/blob/main/skills/cloudflare/SKILL.md
 
     - name: dogfood
       description: Systematically explore and QA a web application to find bugs and UX issues, producing a structured report with screenshots and repro steps
       source: https://github.com/vercel-labs/agent-browser/blob/main/skills/dogfood/SKILL.md
       requires: [skill:agent-browser]
+
+    - name: durable-objects
+      description: Create and review Cloudflare Durable Objects — stateful coordination, RPC methods, SQLite storage, alarms, WebSockets, and Workers integration
+      source: https://github.com/cloudflare/skills/blob/main/skills/durable-objects/SKILL.md
+
+    - name: sandbox-sdk
+      description: Build sandboxed applications for secure code execution — AI code interpreters, CI/CD systems, interactive dev environments, and untrusted code execution
+      source: https://github.com/cloudflare/skills/blob/main/skills/sandbox-sdk/SKILL.md
+
+    - name: web-perf
+      description: Analyze web performance using Chrome DevTools MCP — Core Web Vitals, render-blocking resources, layout shifts, caching, and accessibility audits
+      source: https://github.com/cloudflare/skills/blob/main/skills/web-perf/SKILL.md
+
+    - name: workers-best-practices
+      description: Review and author Cloudflare Workers code against production best practices — streaming, floating promises, global state, secrets, bindings, and observability
+      source: https://github.com/cloudflare/skills/blob/main/skills/workers-best-practices/SKILL.md
+
+    - name: wrangler
+      description: Cloudflare Workers CLI for deploying and managing Workers, KV, R2, D1, Vectorize, AI, Containers, Queues, Workflows, and Secrets Store
+      source: https://github.com/cloudflare/skills/blob/main/skills/wrangler/SKILL.md
   agents: []
   prompts:
     - name: add-changelog
