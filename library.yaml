@@ -68,4 +68,7 @@ library:
     - name: spec-init
       description: Write detailed specs by interviewing the user to gather requirements
       source: https://github.com/fr0ziii/fff-engineering-playbook/blob/main/prompts/spec-init.md
-  rules: []
+  rules:
+    - name: workers
+      description: Cloudflare Workers coding rules — prefer retrieval from Cloudflare docs over training data for Workers, KV, R2, D1, Durable Objects, Queues, Vectorize, AI, and Agents SDK tasks
+      source: https://github.com/cloudflare/skills/blob/main/rules/workers.mdc

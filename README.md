@@ -1,6 +1,6 @@
 # The Library
 
-A meta-skill for private-first distribution of agentics (skills, agents, and prompts) across agents, devices, and teams.
+A meta-skill for private-first distribution of agentics (skills, agents, prompts, and rules) across agents, devices, and teams.
 
 ![The Library](images/10_meta_skill.svg)
 
@@ -16,7 +16,7 @@ The Library solves a specific problem: you've built powerful agentics scattered 
 
 The Library is a single skill whose only job is to manage other skills. It's a catalog of references — local file paths and GitHub repo URLs — that point to where your agentics live. Nothing is copied or installed until you ask for it.
 
-Think of it as a `package.json` for agent capabilities — but instead of packages, you're managing skills, agents, and prompts. Instead of a registry, you're pointing at your own private GitHub repos and local paths.
+Think of it as a `package.json` for agent capabilities — but instead of packages, you're managing skills, agents, prompts, and rules. Instead of a registry, you're pointing at your own private GitHub repos and local paths.
 
 **This is a pure agent application.** There are no scripts, no CLIs, no dependencies, no build tools. The entire application is encoded in `SKILL.md` and a set of cookbook instructions that teach the agent exactly what to do. The agent IS the runtime. This matters because:
 
@@ -61,18 +61,25 @@ default_dirs:
   prompts:
     - default: .claude/commands/
     - global: ~/.claude/commands/
+  rules:
+    - default: .claude/rules/
+    - global: ~/.claude/rules/
 
 library:
   skills:
     - name: my-skill
       description: What this skill does
       source: /Users/me/projects/tools/skills/my-skill/SKILL.md
-      requires: [agent:helper-agent]
+      requires: ["agent:helper-agent"]
     - name: remote-skill
       description: A skill from a private repo
       source: https://github.com/myorg/private-skills/blob/main/skills/remote-skill/SKILL.md
   agents: []
   prompts: []
+  rules:
+    - name: workers
+      description: Cloudflare Workers coding rules
+      source: https://github.com/cloudflare/skills/blob/main/rules/workers.mdc
 ```
 
 The catalog stores pointers, not copies. Skills live in their source repos. You pull on demand.
@@ -94,7 +101,7 @@ For private repos, authentication uses SSH keys or `GITHUB_TOKEN` automatically.
 Dependencies use typed references to avoid name collisions:
 
 ```yaml
-requires: [skill:base-utils, agent:reviewer, prompt:task-router]
+requires: ["skill:base-utils", "agent:reviewer", "prompt:task-router", "rule:workers"]
 ```
 
 Dependencies are resolved and pulled first, recursively.
@@ -267,6 +274,7 @@ just search "keyword"
 | **Skills**      | Raw capabilities — what an agent can do        |
 | **Agents**      | Scale + parallelism + specialization           |
 | **Prompts**     | Orchestration — coordinate skills and agents   |
+| **Rules**       | Behavioral guardrails and coding standards     |
 | **Justfile**    | Terminal access without an interactive session |
 | **The Library** | Distribution across devices, teams, and agents |
 
