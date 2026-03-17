@@ -23,6 +23,14 @@ library:
       description: Browser automation CLI for AI agents — navigate pages, fill forms, click buttons, take screenshots, scrape data, and automate any browser task
       source: https://github.com/vercel-labs/agent-browser/blob/main/skills/agent-browser/SKILL.md
 
+    - name: banner-design
+      description: Design banners for social media, ads, website heroes, and print — 22 styles including minimalist, gradient, bold typography, glassmorphism, 3D, and neon across Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, and print formats
+      source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/banner-design/SKILL.md
+
+    - name: brand
+      description: Brand voice, visual identity, messaging frameworks, and asset management — activate for branded content, tone of voice, marketing assets, brand compliance, and style guides
+      source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/brand/SKILL.md
+
     - name: building-ai-agent-on-cloudflare
       description: Build AI agents on Cloudflare using the Agents SDK with state management, real-time WebSockets, scheduled tasks, tool integration, and chat capabilities
       source: https://github.com/cloudflare/skills/blob/main/skills/building-ai-agent-on-cloudflare/SKILL.md
@@ -34,6 +42,14 @@ library:
     - name: cloudflare
       description: Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI, networking, security, and infrastructure-as-code
       source: https://github.com/cloudflare/skills/blob/main/skills/cloudflare/SKILL.md
+
+    - name: design
+      description: Comprehensive design skill covering brand identity, design tokens, UI styling, logo generation (55 styles), corporate identity programs, HTML presentations, banner design, icon design (SVG), and social media images across all major platforms
+      source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/design/SKILL.md
+
+    - name: design-system
+      description: Token architecture, component specifications, and slide generation — three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, and component specs for systematic, brand-compliant design
+      source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/design-system/SKILL.md
 
     - name: dogfood
       description: Systematically explore and QA a web application to find bugs and UX issues, producing a structured report with screenshots and repro steps
@@ -72,6 +88,10 @@ library:
       description: Create new skills, modify and improve existing skills, and measure skill performance — draft skills, run evals, benchmark with variance analysis, and optimize skill descriptions for better triggering accuracy
       source: https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md
 
+    - name: slides
+      description: Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies
+      source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/slides/SKILL.md
+
     - name: soft-skill
       description: Make frontend interfaces look and feel expensive — premium fonts, generous whitespace, layered card designs with depth, smooth spring-based animations, and floating navigation; bans generic defaults that make AI output look like a template
       source: https://github.com/Leonxlnx/taste-skill/blob/main/soft-skill/SKILL.md
@@ -79,6 +99,14 @@ library:
     - name: taste-skill
       description: Generate modern, premium frontend code from scratch — covers layout, typography, colors, spacing, and motion with configurable design variance, motion intensity, and visual density settings to avoid generic AI output
       source: https://github.com/Leonxlnx/taste-skill/blob/main/taste-skill/SKILL.md
+
+    - name: ui-styling
+      description: Create beautiful, accessible UIs with shadcn/ui components (Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs — dialogs, dropdowns, forms, tables, dark mode, responsive layouts, and consistent theming
+      source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-styling/SKILL.md
+
+    - name: ui-ux-pro-max
+      description: UI/UX design intelligence for web and mobile — 50+ styles, 161 color palettes, 57 font pairings, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, HTML/CSS)
+      source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md
 
     - name: vercel-react-best-practices
       description: React and Next.js performance optimization guidelines from Vercel Engineering — 62 rules across 8 categories covering components, data fetching, bundle optimization, and performance patterns for writing, reviewing, or refactoring React/Next.js code
