@@ -47,6 +47,10 @@ library:
       description: Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI, networking, security, and infrastructure-as-code
       source: https://github.com/cloudflare/skills/blob/main/skills/cloudflare/SKILL.md
 
+    - name: create-meta-prompt
+      description: Design and generate production-grade meta-prompts — prompts that generate, evaluate, or constrain other prompts; covers system prompts, agent prompts, prompt templates, prompt optimizers, and all prompt-engineering artifacts meant to be used as infrastructure
+      source: https://github.com/fr0ziii/fff-engineering-playbook/blob/main/skills/create-meta-prompt/SKILL.md
+
     - name: design
       description: Comprehensive design skill covering brand identity, design tokens, UI styling, logo generation (55 styles), corporate identity programs, HTML presentations, banner design, icon design (SVG), and social media images across all major platforms
       source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/design/SKILL.md
