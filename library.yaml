@@ -23,6 +23,10 @@ library:
       description: Browser automation CLI for AI agents — navigate pages, fill forms, click buttons, take screenshots, scrape data, and automate any browser task
       source: https://github.com/vercel-labs/agent-browser/blob/main/skills/agent-browser/SKILL.md
 
+    - name: astro-framework
+      description: Astro framework specialist for building fast, content-driven websites with islands architecture. Use when creating Astro components, configuring hydration (client:load/idle/visible/media), using server:defer (server islands), Content Layer API (glob/file loaders, live loaders), sessions, astro:env, i18n routing, actions, SSR adapters, view transitions, or integrating React/Vue/Svelte/Solid. Not for full-SPA frameworks (Next.js, Remix, SvelteKit).
+      source: https://github.com/delineas/astro-framework-agents/blob/main/skills/astro-framework/SKILL.md
+
     - name: banner-design
       description: Design banners for social media, ads, website heroes, and print — 22 styles including minimalist, gradient, bold typography, glassmorphism, 3D, and neon across Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, and print formats
       source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/banner-design/SKILL.md
