@@ -76,6 +76,11 @@ library:
       description: Create distinctive, production-grade frontend interfaces with high design quality — web components, pages, applications, and UI with bold aesthetic direction that avoids generic AI aesthetics
       source: https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md
 
+    - name: frontend-design-impeccable
+      description: Create distinctive, production-grade frontend interfaces from the Impeccable collection — gathers project design context first via teach-impeccable, then produces bold, intentional UI with committed aesthetic direction and production-grade code
+      source: https://github.com/pbakaus/impeccable/blob/main/.claude/skills/frontend-design/SKILL.md
+      requires: ["skill:teach-impeccable"]
+
     - name: minimalist-skill
       description: Build clean, editorial-style interfaces inspired by Notion and Linear — warm monochrome palettes, serif/sans-serif typographic contrast, massive whitespace, flat bento grids, and muted pastel accents; blocks gradients, heavy shadows, and generic SaaS patterns
       source: https://github.com/Leonxlnx/taste-skill/blob/main/minimalist-skill/SKILL.md
@@ -119,6 +124,10 @@ library:
     - name: taste-skill
       description: Generate modern, premium frontend code from scratch — covers layout, typography, colors, spacing, and motion with configurable design variance, motion intensity, and visual density settings to avoid generic AI output
       source: https://github.com/Leonxlnx/taste-skill/blob/main/taste-skill/SKILL.md
+
+    - name: teach-impeccable
+      description: One-time setup that gathers design context for your project and saves it to your AI config file — run once per project to establish persistent design guidelines used by all Impeccable skills
+      source: https://github.com/pbakaus/impeccable/blob/main/.claude/skills/teach-impeccable/SKILL.md
 
     - name: ui-styling
       description: Create beautiful, accessible UIs with shadcn/ui components (Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs — dialogs, dropdowns, forms, tables, dark mode, responsive layouts, and consistent theming
