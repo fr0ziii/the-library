@@ -28,6 +28,18 @@ Figure out the type from the user's prompt or the source path:
 - **GitHub URL**: Verify the URL is well-formed (matches browser or raw URL patterns)
 - Confirm the source points to a specific file, not a directory
 
+### 3.5. Assign Tags
+Infer tags from the skill's domain based on its description, name, and source repo:
+- Cloudflare repo or Workers/KV/R2/D1/Durable Objects → `[cloudflare]`
+- UI components, styling, layouts, CSS → `[frontend]`
+- Branding, identity, design systems, visual → `[design]`
+- Framework-specific (Astro, Next.js, Remotion, shadcn) → `[framework]`
+- LLM APIs, model runners, autonomous agents, skill management → `[ai-tools]`
+- Browser automation, transcription, QA, utility CLIs → `[tools]`
+- Library management, prompt engineering, spec writing → `[meta]`
+
+Add `tags: [tag1, tag2]` to the entry. Omit the field entirely if no tags clearly apply.
+
 ### 4. Parse Dependencies
 Detect dependencies by looking through the skill/agent/prompt files, format them as typed references:
 - `skill:name`, `agent:name`, `prompt:name`, `rule:name`

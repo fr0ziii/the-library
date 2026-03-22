@@ -24,31 +24,35 @@ The Library is a catalog of references to your agentics. The `library.yaml` file
 
 ## Commands
 
-| Command                     | Purpose                                  |
-| --------------------------- | ---------------------------------------- |
-| `/library install`          | First-time setup: fork, clone, configure |
-| `/library add <details>`    | Register a new entry in the catalog      |
-| `/library use <name>`       | Pull from source (install or refresh)    |
-| `/library push <name>`      | Push local changes back to source        |
-| `/library remove <name>`    | Remove from catalog and optionally local |
-| `/library list`             | Show full catalog with install status    |
-| `/library sync`             | Re-pull all installed items from source   |
-| `/library search <keyword>` | Find entries by keyword                  |
+| Command                       | Purpose                                       |
+| ----------------------------- | --------------------------------------------- |
+| `/library install`            | First-time setup: fork, clone, configure      |
+| `/library add <details>`      | Register a new entry in the catalog           |
+| `/library use <name>`         | Pull from source (install or refresh)         |
+| `/library push <name>`        | Push local changes back to source             |
+| `/library remove <name>`      | Remove from catalog and optionally local      |
+| `/library list`               | Show full catalog with install status         |
+| `/library sync`               | Re-pull all installed items from source       |
+| `/library search <keyword>`   | Find entries by keyword or tag                |
+| `/library archive <name>`     | Move entry to archived section (hide it)      |
+| `/library unarchive <name>`   | Restore entry from archived to active catalog |
 
 ## Cookbook
 
 Each command has a detailed step-by-step guide. **Read the relevant cookbook file before executing a command.**
 
-| Command | Cookbook                                 | Use When                                                    |
-| ------- | --------------------------------------- | ----------------------------------------------------------- |
-| install | [cookbook/install.md](cookbook/install.md) | First-time setup on a new device                            |
-| add     | [cookbook/add.md](cookbook/add.md)         | User wants to register a new skill/agent/prompt in catalog  |
-| use     | [cookbook/use.md](cookbook/use.md)         | User wants to pull or refresh a skill from the catalog      |
-| push    | [cookbook/push.md](cookbook/push.md)       | User improved a skill locally and wants to update the source |
-| remove  | [cookbook/remove.md](cookbook/remove.md)   | User wants to remove an entry from the catalog               |
-| list    | [cookbook/list.md](cookbook/list.md)       | User wants to see what's available and what's installed      |
-| sync    | [cookbook/sync.md](cookbook/sync.md)       | User wants to refresh all installed items at once            |
-| search  | [cookbook/search.md](cookbook/search.md)   | User is looking for a skill but doesn't know the exact name |
+| Command   | Cookbook                                           | Use When                                                      |
+| --------- | -------------------------------------------------- | ------------------------------------------------------------- |
+| install   | [cookbook/install.md](cookbook/install.md)         | First-time setup on a new device                              |
+| add       | [cookbook/add.md](cookbook/add.md)                 | User wants to register a new skill/agent/prompt in catalog    |
+| use       | [cookbook/use.md](cookbook/use.md)                 | User wants to pull or refresh a skill from the catalog        |
+| push      | [cookbook/push.md](cookbook/push.md)               | User improved a skill locally and wants to update the source  |
+| remove    | [cookbook/remove.md](cookbook/remove.md)           | User wants to remove an entry from the catalog                |
+| list      | [cookbook/list.md](cookbook/list.md)               | User wants to see what's available and what's installed       |
+| sync      | [cookbook/sync.md](cookbook/sync.md)               | User wants to refresh all installed items at once             |
+| search    | [cookbook/search.md](cookbook/search.md)           | User is looking for a skill by keyword, name, or tag          |
+| archive   | [cookbook/archive.md](cookbook/archive.md)         | User wants to hide a skill without deleting it                |
+| unarchive | [cookbook/unarchive.md](cookbook/unarchive.md)     | User wants to restore an archived skill to the active catalog |
 
 **When a user invokes a `/library` command, read the matching cookbook file first, then execute the steps.**
 
@@ -140,6 +144,47 @@ The library skill itself lives in `<LIBRARY_SKILL_DIR>` as a cloned git repo. Wh
 
 This keeps the catalog in sync across devices.
 
+## Tags
+
+The optional `tags` field on each entry enables filtering with `/library list --tag <name>` and `/library search --tag <name>`.
+
+```yaml
+- name: my-skill
+  description: ...
+  source: ...
+  tags: [frontend, design]
+```
+
+Standard tag taxonomy:
+- `cloudflare` — Workers, Durable Objects, KV, R2, D1, Agents SDK, MCP
+- `frontend` — UI components, frameworks, styling, performance
+- `design` — brand, visual identity, design systems, banners, slides
+- `framework` — Astro, React/Next.js, Remotion, shadcn/ui
+- `ai-tools` — LLM APIs, skill management, autonomous agents, model runners
+- `tools` — browser automation, transcription, QA, utilities
+- `meta` — library management, prompt engineering, spec writing
+
+## Archived Section
+
+The `archived:` top-level key mirrors the structure of `library:` but is hidden from `/library list` by default. Use it to deprioritize skills without deleting them.
+
+```yaml
+archived:
+  skills:
+    - name: old-skill
+      description: ...
+      source: ...
+      tags: [cloudflare]
+  agents: []
+  prompts: []
+  rules: []
+```
+
+- `/library archive <name>` — moves an entry from `library:` to `archived:`
+- `/library unarchive <name>` — moves it back
+- `/library list --archived` — shows archived entries in a separate section
+- `/library use <name>` — works normally even for archived entries
+
 ## Example Filled Library File
 
 ```yaml
@@ -162,25 +207,30 @@ library:
     - name: firecrawl
       description: Scrape, crawl, and search websites using Firecrawl CLI
       source: /Users/me/projects/tools/skills/firecrawl/SKILL.md
+      tags: [tools]
 
     - name: meta-skill
       description: Creates new Agent Skills following best practices
       source: /Users/me/projects/tools/skills/meta-skill/SKILL.md
+      tags: [meta]
 
     - name: diagram-kroki
       description: Generate diagrams via Kroki HTTP API supporting 28+ languages
       source: https://github.com/myorg/private-skills/blob/main/skills/diagram-kroki/SKILL.md
       requires: [skill:firecrawl]
+      tags: [tools]
 
     - name: green-screen-captions
       description: Generate and burn AI-powered captions onto green screen videos
       source: https://raw.githubusercontent.com/myorg/video-tools/main/skills/green-screen-captions/SKILL.md
       requires: [agent:video-processor, prompt:caption-style]
+      tags: [tools]
 
   agents:
     - name: video-processor
       description: Processes video files with ffmpeg and whisper transcription
       source: /Users/me/projects/tools/agents/video-processor/AGENT.md
+      tags: [tools]
 
     - name: code-reviewer
       description: Reviews code for quality, security, and performance
@@ -194,9 +244,21 @@ library:
     - name: commit-message
       description: Standardized commit message format for all projects
       source: https://github.com/myorg/team-prompts/blob/main/prompts/commit-message.md
+      tags: [meta]
 
   rules:
     - name: workers
       description: Cloudflare Workers coding rules and best practices
       source: https://github.com/cloudflare/skills/blob/main/rules/workers.mdc
+      tags: [cloudflare]
+
+archived:
+  skills:
+    - name: old-framework-skill
+      description: Outdated framework helper, kept for reference
+      source: https://github.com/myorg/old-skills/blob/main/skills/old-framework/SKILL.md
+      tags: [frontend]
+  agents: []
+  prompts: []
+  rules: []
 ```

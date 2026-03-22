@@ -1,7 +1,11 @@
 # List Available Skills
 
 ## Context
-Show the full library catalog with install status.
+Show the full library catalog with install status. Supports tag filtering and archived visibility.
+
+## Flags
+- `--tag <name>` — filter results to entries whose `tags` list contains the given tag
+- `--archived` — include archived entries in a separate section below active ones
 
 ## Steps
 
@@ -15,8 +19,14 @@ git pull
 ### 2. Read the Catalog
 - Read `library.yaml`
 - Parse all entries from `library.skills`, `library.agents`, `library.prompts`, and `library.rules`
+- If `--archived` flag present, also parse `archived.skills`, `archived.agents`, `archived.prompts`, `archived.rules`
 
-### 3. Check Install Status
+### 3. Apply Tag Filter
+If `--tag <name>` was provided:
+- Keep only entries whose `tags` list contains the given tag (case-insensitive)
+- Apply to both active and archived sets if `--archived` is also present
+
+### 4. Check Install Status
 For each entry:
 - Determine the type and corresponding default/global directories from `default_dirs`
 - Check if a directory matching the entry name exists in the **default** directory
@@ -24,37 +34,49 @@ For each entry:
 - Search recursively for name matches
 - Mark as: `installed (default)`, `installed (global)`, or `not installed`
 
-### 4. Display Results
+### 5. Display Results
 
-Format the output as a table grouped by type:
+Format the output as a table grouped by type. Include a `Tags` column:
 
 ```
 ## Skills
-| Name | Description | Source | Status |
-|------|-------------|--------|--------|
-| skill-name | skill-description | /local/path/... | installed (default) |
-| other-skill | other-description | github.com/... | not installed |
+| Name | Description | Tags | Status |
+|------|-------------|------|--------|
+| skill-name | skill-description | cloudflare, tools | installed (default) |
+| other-skill | other-description | frontend | not installed |
 
 ## Agents
-| Name | Description | Source | Status |
-|------|-------------|--------|--------|
-| agent-name | agent-description | /local/path/... | installed (global) |
+| Name | Description | Tags | Status |
+|------|-------------|------|--------|
 
 ## Prompts
-| Name | Description | Source | Status |
-|------|-------------|--------|--------|
-| prompt-name | prompt-description | github.com/... | not installed |
+| Name | Description | Tags | Status |
+|------|-------------|------|--------|
 
 ## Rules
-| Name | Description | Source | Status |
-|------|-------------|--------|--------|
-| rule-name | rule-description | github.com/... | not installed |
+| Name | Description | Tags | Status |
+|------|-------------|------|--------|
 ```
 
-If a section is empty, show: `No <type> in catalog.`
+If a section is empty (or filtered to empty), show: `No <type> in catalog.`
 
-### 5. Summary
+If `--archived` flag was present, show archived entries below in a clearly labeled section:
+
+```
+---
+## Archived Skills
+| Name | Description | Tags | Status |
+|------|-------------|------|--------|
+| old-skill | description | cloudflare | not installed |
+```
+
+### 6. Summary
 At the bottom, show:
-- Total entries in catalog
+- Total active entries in catalog
 - Total installed locally
 - Total not installed
+
+If there are archived entries and `--archived` was NOT passed, append:
+```
+(X archived entries hidden — use /library list --archived to see them)
+```

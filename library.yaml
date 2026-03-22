@@ -18,161 +18,210 @@ library:
     - name: agents-sdk
       description: Build AI agents on Cloudflare Workers using the Agents SDK — stateful agents, durable workflows, real-time WebSocket apps, scheduled tasks, MCP servers, and chat applications
       source: https://github.com/cloudflare/skills/blob/main/skills/agents-sdk/SKILL.md
+      tags: [cloudflare, ai-tools]
 
     - name: agent-browser
       description: Browser automation CLI for AI agents — navigate pages, fill forms, click buttons, take screenshots, scrape data, and automate any browser task
       source: https://github.com/vercel-labs/agent-browser/blob/main/skills/agent-browser/SKILL.md
+      tags: [tools]
 
     - name: astro-framework
       description: Astro framework specialist for building fast, content-driven websites with islands architecture. Use when creating Astro components, configuring hydration (client:load/idle/visible/media), using server:defer (server islands), Content Layer API (glob/file loaders, live loaders), sessions, astro:env, i18n routing, actions, SSR adapters, view transitions, or integrating React/Vue/Svelte/Solid. Not for full-SPA frameworks (Next.js, Remix, SvelteKit).
       source: https://github.com/delineas/astro-framework-agents/blob/main/skills/astro-framework/SKILL.md
+      tags: [frontend, framework]
 
     - name: autoresearch-create
       description: Set up and run an autonomous experiment loop for any optimization target. Gathers what to optimize, then starts the loop immediately. Use when asked to "run autoresearch", "optimize X in a loop", "set up autoresearch for X", or "start experiments".
       source: https://github.com/davebcn87/pi-autoresearch/blob/main/skills/autoresearch-create/SKILL.md
+      tags: [ai-tools]
 
     - name: banner-design
       description: Design banners for social media, ads, website heroes, and print — 22 styles including minimalist, gradient, bold typography, glassmorphism, 3D, and neon across Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, and print formats
       source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/banner-design/SKILL.md
+      tags: [frontend, design]
 
     - name: brand
       description: Brand voice, visual identity, messaging frameworks, and asset management — activate for branded content, tone of voice, marketing assets, brand compliance, and style guides
       source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/brand/SKILL.md
+      tags: [design]
 
     - name: building-ai-agent-on-cloudflare
       description: Build AI agents on Cloudflare using the Agents SDK with state management, real-time WebSockets, scheduled tasks, tool integration, and chat capabilities
       source: https://github.com/cloudflare/skills/blob/main/skills/building-ai-agent-on-cloudflare/SKILL.md
+      tags: [cloudflare]
 
     - name: building-mcp-server-on-cloudflare
       description: Build remote MCP servers on Cloudflare Workers with tools, OAuth authentication, and production deployment
       source: https://github.com/cloudflare/skills/blob/main/skills/building-mcp-server-on-cloudflare/SKILL.md
+      tags: [cloudflare]
 
     - name: cloudflare
       description: Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI, networking, security, and infrastructure-as-code
       source: https://github.com/cloudflare/skills/blob/main/skills/cloudflare/SKILL.md
+      tags: [cloudflare]
 
     - name: context7-cli
       description: Use the ctx7 CLI to fetch library documentation, manage AI coding skills, and configure Context7 MCP — activate when the user mentions "ctx7" or "context7", needs current docs for any library, wants to install/search/generate skills, or needs to set up Context7 for their AI coding agent
       source: https://github.com/upstash/context7/blob/master/skills/context7-cli/SKILL.md
+      tags: [ai-tools]
 
     - name: create-meta-prompt
       description: Design and generate production-grade meta-prompts — prompts that generate, evaluate, or constrain other prompts; covers system prompts, agent prompts, prompt templates, prompt optimizers, and all prompt-engineering artifacts meant to be used as infrastructure
       source: https://github.com/fr0ziii/fff-engineering-playbook/blob/main/skills/create-meta-prompt/SKILL.md
+      tags: [meta]
 
     - name: design
       description: Comprehensive design skill covering brand identity, design tokens, UI styling, logo generation (55 styles), corporate identity programs, HTML presentations, banner design, icon design (SVG), and social media images across all major platforms
       source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/design/SKILL.md
+      tags: [frontend, design]
 
     - name: design-system
       description: Token architecture, component specifications, and slide generation — three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, and component specs for systematic, brand-compliant design
       source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/design-system/SKILL.md
+      tags: [frontend, design]
 
     - name: dogfood
       description: Systematically explore and QA a web application to find bugs and UX issues, producing a structured report with screenshots and repro steps
       source: https://github.com/vercel-labs/agent-browser/blob/main/skills/dogfood/SKILL.md
       requires: ["skill:agent-browser"]
+      tags: [tools]
 
     - name: durable-objects
       description: Create and review Cloudflare Durable Objects — stateful coordination, RPC methods, SQLite storage, alarms, WebSockets, and Workers integration
       source: https://github.com/cloudflare/skills/blob/main/skills/durable-objects/SKILL.md
+      tags: [cloudflare]
 
     - name: frontend-design
       description: Create distinctive, production-grade frontend interfaces with high design quality — web components, pages, applications, and UI with bold aesthetic direction that avoids generic AI aesthetics
       source: https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md
+      tags: [frontend, design]
 
     - name: frontend-design-impeccable
       description: Create distinctive, production-grade frontend interfaces from the Impeccable collection — gathers project design context first via teach-impeccable, then produces bold, intentional UI with committed aesthetic direction and production-grade code
       source: https://github.com/pbakaus/impeccable/blob/main/.claude/skills/frontend-design/SKILL.md
       requires: ["skill:teach-impeccable"]
+      tags: [frontend, design]
 
     - name: minimalist-skill
       description: Build clean, editorial-style interfaces inspired by Notion and Linear — warm monochrome palettes, serif/sans-serif typographic contrast, massive whitespace, flat bento grids, and muted pastel accents; blocks gradients, heavy shadows, and generic SaaS patterns
       source: https://github.com/Leonxlnx/taste-skill/blob/main/minimalist-skill/SKILL.md
+      tags: [frontend, design]
 
     - name: output-skill
       description: Prevent AI from generating lazy, incomplete frontend code — blocks placeholder comments, skipped code blocks, and half-finished outputs; forces complete, production-ready implementation
       source: https://github.com/Leonxlnx/taste-skill/blob/main/output-skill/SKILL.md
-
-    - name: remotion-best-practices
-      description: Best practices for Remotion — video creation in React, including captions/subtitles, FFmpeg integration, audio visualization, and composition patterns
-      source: https://github.com/remotion-dev/skills/blob/main/skills/remotion/SKILL.md
-
-    - name: replicate
-      description: Discover, compare, and run AI models using Replicate's API
-      source: https://github.com/replicate/skills/blob/main/skills/replicate/SKILL.md
-
-    - name: sandbox-sdk
-      description: Build sandboxed applications for secure code execution — AI code interpreters, CI/CD systems, interactive dev environments, and untrusted code execution
-      source: https://github.com/cloudflare/skills/blob/main/skills/sandbox-sdk/SKILL.md
+      tags: [frontend]
 
     - name: redesign-skill
       description: Upgrade existing frontend projects — audit what's already there and fix the biggest design problems first without rebuilding from scratch
       source: https://github.com/Leonxlnx/taste-skill/blob/main/redesign-skill/SKILL.md
+      tags: [frontend, design]
+
+    - name: remotion-best-practices
+      description: Best practices for Remotion — video creation in React, including captions/subtitles, FFmpeg integration, audio visualization, and composition patterns
+      source: https://github.com/remotion-dev/skills/blob/main/skills/remotion/SKILL.md
+      tags: [frontend, framework]
+
+    - name: replicate
+      description: Discover, compare, and run AI models using Replicate's API
+      source: https://github.com/replicate/skills/blob/main/skills/replicate/SKILL.md
+      tags: [ai-tools]
+
+    - name: sandbox-sdk
+      description: Build sandboxed applications for secure code execution — AI code interpreters, CI/CD systems, interactive dev environments, and untrusted code execution
+      source: https://github.com/cloudflare/skills/blob/main/skills/sandbox-sdk/SKILL.md
+      tags: [cloudflare]
 
     - name: shadcn
       description: Manage shadcn/ui components and projects — adding, searching, fixing, styling, and composing UI with component docs and usage examples; triggers for shadcn/ui, component registries, components.json, and --preset workflows
       source: https://github.com/shadcn-ui/ui/blob/main/skills/shadcn/SKILL.md
+      tags: [frontend, framework]
 
     - name: skill-creator
       description: Create new skills, modify and improve existing skills, and measure skill performance — draft skills, run evals, benchmark with variance analysis, and optimize skill descriptions for better triggering accuracy
       source: https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md
+      tags: [meta, ai-tools]
 
     - name: slides
       description: Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies
       source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/slides/SKILL.md
+      tags: [frontend, design]
 
     - name: soft-skill
       description: Make frontend interfaces look and feel expensive — premium fonts, generous whitespace, layered card designs with depth, smooth spring-based animations, and floating navigation; bans generic defaults that make AI output look like a template
       source: https://github.com/Leonxlnx/taste-skill/blob/main/soft-skill/SKILL.md
+      tags: [frontend, design]
 
     - name: taste-skill
       description: Generate modern, premium frontend code from scratch — covers layout, typography, colors, spacing, and motion with configurable design variance, motion intensity, and visual density settings to avoid generic AI output
       source: https://github.com/Leonxlnx/taste-skill/blob/main/taste-skill/SKILL.md
+      tags: [frontend, design]
 
     - name: teach-impeccable
       description: One-time setup that gathers design context for your project and saves it to your AI config file — run once per project to establish persistent design guidelines used by all Impeccable skills
       source: https://github.com/pbakaus/impeccable/blob/main/.claude/skills/teach-impeccable/SKILL.md
+      tags: [frontend, design]
 
     - name: ui-styling
       description: Create beautiful, accessible UIs with shadcn/ui components (Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs — dialogs, dropdowns, forms, tables, dark mode, responsive layouts, and consistent theming
       source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-styling/SKILL.md
+      tags: [frontend, design]
 
     - name: ui-ux-pro-max
       description: UI/UX design intelligence for web and mobile — 50+ styles, 161 color palettes, 57 font pairings, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, HTML/CSS)
       source: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md
+      tags: [frontend, design]
 
     - name: vercel-react-best-practices
       description: React and Next.js performance optimization guidelines from Vercel Engineering — 62 rules across 8 categories covering components, data fetching, bundle optimization, and performance patterns for writing, reviewing, or refactoring React/Next.js code
       source: https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md
+      tags: [frontend, framework]
 
     - name: video-url-transcriber
       description: Transcribe a video/audio URL into timestamped JSON using yt-dlp + ffmpeg + faster-whisper. Use when an agent needs platform-agnostic URL-to-transcript ingestion for downstream analysis.
       source: https://github.com/nativ3ai/universal-video-transcriber/blob/main/skill/video-url-transcriber/SKILL.md
+      tags: [tools]
 
     - name: web-perf
       description: Analyze web performance using Chrome DevTools MCP — Core Web Vitals, render-blocking resources, layout shifts, caching, and accessibility audits
       source: https://github.com/cloudflare/skills/blob/main/skills/web-perf/SKILL.md
+      tags: [cloudflare, tools]
 
     - name: workers-best-practices
       description: Review and author Cloudflare Workers code against production best practices — streaming, floating promises, global state, secrets, bindings, and observability
       source: https://github.com/cloudflare/skills/blob/main/skills/workers-best-practices/SKILL.md
+      tags: [cloudflare]
 
     - name: wrangler
       description: Cloudflare Workers CLI for deploying and managing Workers, KV, R2, D1, Vectorize, AI, Containers, Queues, Workflows, and Secrets Store
       source: https://github.com/cloudflare/skills/blob/main/skills/wrangler/SKILL.md
+      tags: [cloudflare]
+
   agents:
     - name: kumo
       description: Frontend engineer agent for Cloudflare's React component library (@cloudflare/kumo) — pnpm monorepo with component library, Astro docs site, and Figma plugin
       source: https://github.com/cloudflare/kumo/blob/main/.opencode/agents/kumo.md
+      tags: [cloudflare, frontend]
+
   prompts:
     - name: add-changelog
       description: Generate and maintain project changelog with Keep a Changelog format
       source: https://github.com/fr0ziii/fff-engineering-playbook/blob/main/prompts/add-changelog.md
+      tags: [meta]
 
     - name: spec-init
       description: Write detailed specs by interviewing the user to gather requirements
       source: https://github.com/fr0ziii/fff-engineering-playbook/blob/main/prompts/spec-init.md
+      tags: [meta]
+
   rules:
     - name: workers
       description: Cloudflare Workers coding rules — prefer retrieval from Cloudflare docs over training data for Workers, KV, R2, D1, Durable Objects, Queues, Vectorize, AI, and Agents SDK tasks
       source: https://github.com/cloudflare/skills/blob/main/rules/workers.mdc
+      tags: [cloudflare]
+
+archived:
+  skills: []
+  agents: []
+  prompts: []
+  rules: []
