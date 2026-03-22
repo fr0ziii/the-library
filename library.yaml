@@ -141,6 +141,10 @@ library:
       description: React and Next.js performance optimization guidelines from Vercel Engineering — 62 rules across 8 categories covering components, data fetching, bundle optimization, and performance patterns for writing, reviewing, or refactoring React/Next.js code
       source: https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md
 
+    - name: video-url-transcriber
+      description: Transcribe a video/audio URL into timestamped JSON using yt-dlp + ffmpeg + faster-whisper. Use when an agent needs platform-agnostic URL-to-transcript ingestion for downstream analysis.
+      source: https://github.com/nativ3ai/universal-video-transcriber/blob/main/skill/video-url-transcriber/SKILL.md
+
     - name: web-perf
       description: Analyze web performance using Chrome DevTools MCP — Core Web Vitals, render-blocking resources, layout shifts, caching, and accessibility audits
       source: https://github.com/cloudflare/skills/blob/main/skills/web-perf/SKILL.md
