@@ -51,6 +51,10 @@ library:
       description: Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI, networking, security, and infrastructure-as-code
       source: https://github.com/cloudflare/skills/blob/main/skills/cloudflare/SKILL.md
 
+    - name: context7-cli
+      description: Use the ctx7 CLI to fetch library documentation, manage AI coding skills, and configure Context7 MCP — activate when the user mentions "ctx7" or "context7", needs current docs for any library, wants to install/search/generate skills, or needs to set up Context7 for their AI coding agent
+      source: https://github.com/upstash/context7/blob/master/skills/context7-cli/SKILL.md
+
     - name: create-meta-prompt
       description: Design and generate production-grade meta-prompts — prompts that generate, evaluate, or constrain other prompts; covers system prompts, agent prompts, prompt templates, prompt optimizers, and all prompt-engineering artifacts meant to be used as infrastructure
       source: https://github.com/fr0ziii/fff-engineering-playbook/blob/main/skills/create-meta-prompt/SKILL.md
