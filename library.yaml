@@ -15,6 +15,23 @@ default_dirs:
 # playbook: https://github.com/fr0ziii/fff-engineering-playbook
 library:
   skills:
+    - name: agentation
+      description: Add the Agentation visual feedback toolbar to a Next.js project (App Router or Pages Router) — installs the package and wires up the component automatically
+      source: https://github.com/benjitaylor/agentation/blob/main/skills/agentation/SKILL.md
+      tags: [tools, frontend]
+
+    - name: agentation-bundle
+      description: Bundle that installs both agentation and agentation-self-driving together — use this single reference to get the full Agentation toolkit (toolbar setup + autonomous design critique mode)
+      source: https://github.com/benjitaylor/agentation/blob/main/skills/agentation/SKILL.md
+      requires: [skill:agentation, skill:agentation-self-driving]
+      tags: [tools, frontend, ai-tools]
+
+    - name: agentation-self-driving
+      description: Autonomous design critique mode using the Agentation annotation toolbar — agent browses the page in a headed browser, scans the UI, and adds design annotations in real time like a self-driving car. Requires Agentation toolbar and agent-browser.
+      source: https://github.com/benjitaylor/agentation/blob/main/skills/agentation-self-driving/SKILL.md
+      requires: [skill:agentation, skill:agent-browser]
+      tags: [tools, ai-tools]
+
     - name: agents-sdk
       description: Build AI agents on Cloudflare Workers using the Agents SDK — stateful agents, durable workflows, real-time WebSocket apps, scheduled tasks, MCP servers, and chat applications
       source: https://github.com/cloudflare/skills/blob/main/skills/agents-sdk/SKILL.md
